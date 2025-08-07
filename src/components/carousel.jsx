@@ -12,7 +12,7 @@ import {
 
 const DEFAULT_ITEMS = [
   {
-    title: "Text Animations",
+    title: "Text Anitions ", 
     description: "Cool text animations for your projects.",
     id: 1,
     image: "images.png",
