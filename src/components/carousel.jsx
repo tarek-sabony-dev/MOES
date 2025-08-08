@@ -12,7 +12,7 @@ import {
 
 const DEFAULT_ITEMS = [
   {
-    title: "Text Anitions ", 
+    title: "Text Animations",
     description: "Cool text animations for your projects.",
     id: 1,
     image: "images.png",
@@ -48,7 +48,7 @@ const VELOCITY_THRESHOLD = 500;
 const GAP = 16;
 const SPRING_OPTIONS = { type: "spring", stiffness: 300, damping: 30 };
 
-export default function Carousel({
+export default function Carousel1({
   items = DEFAULT_ITEMS,
   baseWidth = 280,
   autoplay = false,
@@ -146,24 +146,21 @@ export default function Carousel({
     };
 
   return (
-    <div className="rounded-[24px] border-2 p-2 border-[#FFFFFF]">
+    <div className="w-full rounded-[24px] border p-2 border-white">
       <div
         ref={containerRef}
-        className={`relative overflow-hidden p-0 ${round
-          ? "rounded-full border border-white"
-          : "rounded-none border-none border-[#222]"
-          }`}
-        style={{
-          width: `${baseWidth}px`,
-          ...(round && { height: `${baseWidth}px` }), 
-        }}
+        className={`w-full relative overflow-hidden `}
+        // style={{
+        //   width: `${baseWidth}px`,
+        //   ...(round && { height: `${baseWidth}px` }), 
+        // }}
       >
         <motion.div
-          className="flex"
+          className="w-full flex"
           drag="x"
           {...dragProps}
           style={{
-            width: itemWidth,
+            // width: itemWidth,
             gap: `${GAP}px`,
             perspective: 1000,
             perspectiveOrigin: `${currentIndex * trackItemOffset + itemWidth / 2}px 50%`,
@@ -186,12 +183,9 @@ export default function Carousel({
             return (
               <motion.div
                 key={index}
-                className={`relative shrink-0 flex flex-col items-center p-2 pb-12 ${round
-                  ? "items-center justify-center text-center bg-[#060010] border-0"
-                  : "items-start justify-between bg-[#222] border-[2px] border-[#FFFFFF] rounded-[12px]"
-                  } overflow-hidden cursor-grab active:cursor-grabbing`}
+                className={`w-full relative shrink-0 flex flex-col items-center p-2 overflow-hidden cursor-grab active:cursor-grabbing`}
                 style={{
-                  width: itemWidth,
+                  // width: itemWidth,
                   height: round ? itemWidth : "350px", // it should be 100% but not working
                   rotateY: rotateY,
                   ...(round && { borderRadius: "50%" }),

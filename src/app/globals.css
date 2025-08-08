@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.beiruti {
+  font-family: var(--font-beiruti);
+}
+
+.h1 {
+  @apply text-[32px] lg:text-[64px] text-white text-center font-semibold
+}
+
+.h2 {
+  @apply text-[28px] lg:text-5xl text-white font-semibold
+}
+
+.h3 {
+  @apply text-2xl text-white font-semibold
+}
+
+.base {
+  @apply text-base opacity-70 text-white text-center
+}
