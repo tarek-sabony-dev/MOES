@@ -1,10 +1,10 @@
 import Card from "./card"
 import CarouselWithDots from "./cards-carousel"
 
-function Section ({ title, flex, cards }) {
+function Section ({ title, flex, cards, ref }) {
   return (
     <>
-      <div className="w-full h-fit flex flex-col justify-around items-center gap-6 p-6 lg:px-40 lg:py-12 ">
+      <div ref={ref} className="w-full h-fit flex flex-col justify-around items-center gap-6 p-6 lg:px-40 lg:py-12 ">
         <div className="h2">
           {title}
         </div>
@@ -16,11 +16,11 @@ function Section ({ title, flex, cards }) {
   )
 }
 
-function CarouselSection ({cards}) {
+function CarouselSection ({cards, ref}) {
 
   return (
     <>
-      <div className="w-full h-fit flex flex-col justify-center items-center gap-6 p-6 lg:px-40 lg:py-12 ">
+      <div ref={ref} className="w-full h-fit flex flex-col justify-center items-center gap-6 p-6 lg:px-40 lg:py-12 ">
         <div className="h2">
           مجالات أعمالنا
         </div>

@@ -1,7 +1,24 @@
+'use client'
+
 import Background from "@/components/background";
 import { CarouselSection, Section } from "@/components/section";
+import Navbar from "./testing/Navbar";
+import { useRef } from "react";
 
 export default function page () {
+  const refAbout = useRef(null)
+  const refWorkFields = useRef(null)
+  const refWorks = useRef(null)
+  const refAskus = useRef(null)
+  const refContactus = useRef(null)
+
+  const menuItems = [
+    {id: 0, name: "حول الشركة", ref: refAbout },
+    {id: 1, name: "مجالات عملنا", ref: refWorkFields },
+    {id: 2, name: "أعمالنا", ref: refWorks },
+    {id: 3, name: "اسألنا", ref: refAskus },
+    {id: 4, name: "اتصل بنا", ref: refContactus },
+  ];
   const aboutUsSection = [
     {id: 0, cardTitle: "من نحن ؟", text: "نخبة من المهندسين المتخصصين نعمل على ابتكار حلول تقنية متقدمة في مجالات التحكم الآلي وكفاءة استخدام الطاقة من خلال حلول ذكية تلبي متطلبات الحياة العصرية. كما نقوم بتصميم وتنفيذ أنظمة المنازل الذكية التي توفر الراحة والأمان.", image: "about-us-image.png"},
   ]
@@ -19,10 +36,8 @@ export default function page () {
   return (
     <>
       <Background></Background>
-      <div className="w-full h-16 lg:h-48 ">
-      
-      </div>
-      <div className="w-full h-fit flex flex-col gap-5 lg:gap-56 ">
+      <Navbar menuItems={menuItems} ></Navbar>
+      <div className="w-full h-fit flex flex-col gap-5 lg:gap-80 lg:mt-32 ">
         <div className="w-full h-fit px-6 " >
           <div className="w-full h-fit flex flex-col justify-center items-center " >
             <div className="h1 " >
@@ -34,8 +49,8 @@ export default function page () {
           </div>
         </div>
         <div className="w-full h-fit ">
-          <Section flex={"flex-col lg:flex-row"} title={"حول شركتنا"} cards={aboutUsSection} ></Section>
-          <CarouselSection cards={workFieldsSection} ></CarouselSection>
+          <Section flex={"flex-col lg:flex-row"} title={"حول شركتنا"} cards={aboutUsSection} ref={refAbout} ></Section>
+          <CarouselSection cards={workFieldsSection} ref={refWorkFields} ></CarouselSection>
         </div>
       </div>
     </>

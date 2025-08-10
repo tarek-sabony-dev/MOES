@@ -1,8 +1,9 @@
+import Navbar from "./Navbar";
 
-export default function page () {
+export default function testingPage () {
   return (
     <>
-    
+      <Navbar></Navbar>
     </>
   )
 }

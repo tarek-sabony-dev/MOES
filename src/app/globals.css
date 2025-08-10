@@ -19,7 +19,7 @@
 }
 
 .base {
-  @apply text-base opacity-70 text-white text-center
+  @apply text-base text-opacity-70 text-white text-center
 }
 
 
