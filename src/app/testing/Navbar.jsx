@@ -62,7 +62,7 @@ export default function Navbar ({ menuItems }) {
       animate={{ y: isVisible ? 0 : -200 }}
       transition={{ type: "spring", damping: 20, stiffness: 300 }}
     >
-      <div className="w-full h-fit flex justify-between items-center backdrop-blur-md p-2 lg:p-4 border rounded-lg ">
+      <div className="w-full h-fit flex justify-between items-center backdrop-blur-md p-2 lg:p-4 border rounded-lg lg:rounded-3xl ">
         {/* Logo */}
         <div className="w-fit h-fit " >
           <svg width="61" height="16" viewBox="0 0 61 16" fill="none" xmlns="http://www.w3.org/2000/svg">
