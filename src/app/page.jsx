@@ -1,7 +1,7 @@
 'use client'
 
 import Background from "@/components/background";
-import { CarouselSection, Section } from "@/components/section";
+import { AskusSection, CarouselSection, Section } from "@/components/section";
 import Navbar from "./testing/Navbar";
 import { useRef } from "react";
 
@@ -29,8 +29,8 @@ export default function page () {
     {id: 3,cardTitle: "التحكم اﻵلي", text: "تصميم و تنفيذ أنظمة التحكم للمعدات الصناعية و خطوط الإنتاج باستخدام تقنيات متقدمة", image: "robotic-controling.png"},
   ]
   const ourWorksSection = [
-    {id: 0,cardTitle: "برمجة المتحكمات الصغرية", text: "تطوير حلول مدمجة تعتمد على متحكمات دقيقة للتحكم في العمليات و الأجهزة الذكية", image: "microcontroler.png"},
-    {id: 1,cardTitle: "أنظمة المنازل الذكية", text: "تصميم و تركيب أنظمة ذكية للتحكم في الإضاءة و التكييف و الطاقة لتوفير الراحة و كفاءة استهلاك الموارد", image: "smart-house.png"},
+    {id: 0,cardTitle: "اسم العمل", text: "شرح عن العمل", image: "https://placeholder.pics/svg/400x300"},
+    {id: 1,cardTitle: "اسم العمل", text: "شرح عن العمل", image: "https://placeholder.pics/svg/400x300"},
   ]
 
   return (
@@ -51,6 +51,8 @@ export default function page () {
         <div className="w-full h-fit ">
           <Section flex={"flex-col lg:flex-row"} title={"حول شركتنا"} cards={aboutUsSection} ref={refAbout} ></Section>
           <CarouselSection cards={workFieldsSection} ref={refWorkFields} ></CarouselSection>
+          <Section flex={"flex-col lg:flex-row"} title={"من أعمالنا"} cards={ourWorksSection} ref={refWorks} ></Section>
+          <AskusSection ref={refAskus}></AskusSection>
         </div>
       </div>
     </>
