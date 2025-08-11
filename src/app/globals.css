@@ -18,6 +18,11 @@
   @apply text-2xl text-white font-semibold
 }
 
+.text {
+  @apply text-base lg:text-xl text-opacity-70 text-white text-center
+}
+
+
 .base {
   @apply text-base text-opacity-70 text-white text-center
 }

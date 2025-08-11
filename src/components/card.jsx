@@ -9,7 +9,7 @@ export default function Card ({ image, cardTitle, text, flex }) {
             <div className="h3 ">
               {cardTitle}
             </div>  
-            <div className="base lg:text-right ">
+            <div className="text lg:text-right ">
               {text}
             </div>
           </div>
