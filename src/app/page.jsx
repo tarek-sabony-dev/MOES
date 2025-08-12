@@ -49,10 +49,10 @@ export default function page () {
           </div>
         </div>
         <div className="w-full h-fit ">
-          <Section flex={"flex-col lg:flex-row"} title={"حول شركتنا"} cards={aboutUsSection} ref={refAbout} ></Section>
+          <Section title={"حول شركتنا"} cards={aboutUsSection} ref={refAbout} ></Section>
           <CarouselSection cards={workFieldsSection} ref={refWorkFields} ></CarouselSection>
-          <Section flex={"flex-col lg:flex-row"} title={"من أعمالنا"} cards={ourWorksSection} ref={refWorks} ></Section>
-          <AskusSection ref={refAskus}></AskusSection>
+          <Section title={"من أعمالنا"} cards={ourWorksSection} ref={refWorks} ></Section>
+          <AskusSection image={"askus-image.png"} ref={refAskus}></AskusSection>
         </div>
       </div>
     </>

@@ -1,15 +1,15 @@
 import Card from "./card"
 import CarouselWithDots from "./cards-carousel"
 
-function Section ({ title, flex, cards, ref }) {
+function Section ({ title, cards, ref }) {
   return (
     <>
-      <div ref={ref} className="w-full h-fit flex flex-col justify-around items-center gap-6 p-6 lg:px-40 lg:py-12 ">
+      <div ref={ref} className="w-full h-fit flex flex-col justify-between items-center gap-6 p-6 lg:px-40 lg:py-12 ">
         <div className="h2">
           {title}
         </div>
         {cards.map((card) => (
-          <Card key={card.id} image={card.image} cardTitle={card.cardTitle} text={card.text} flex={`${flex}${card.id % 2 !== 0 ? '-reverse' : ''}`} ></Card>
+          <Card key={card.id} image={card.image} cardTitle={card.cardTitle} text={card.text} className={`${card.id % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} `} ></Card>
         ))}
       </div>
     </>
@@ -51,10 +51,19 @@ function CarouselSection ({cards, ref}) {
   )
 }
 
-function AskusSection ({ref}) {
+function AskusSection ({image, ref}) {
   return (
     <>
-
+      <div ref={ref} className="w-full h-fit flex flex-col justify-around items-center gap-6 p-6 lg:px-40 lg:py-12 ">
+        <div className="h2">
+          اطرح سؤالك
+        </div>
+        <div className="w-full h-fit flex flex-col justify-around items-center p-2 lg:p-4 border border-white rounded-3xl lg:rounded-[48px] ">
+          <div className={`w-full h-fit flex justify-around items-center gap-5 p-2 pb-5 lg:p-4 lg:pb-6 border border-white rounded-2xl lg:rounded-[32px] `}>
+            <img className="w-full aspect-square rounded-lg lg:rounded-2xl " src={image} alt="gmail dashbord image" />
+          </div>
+        </div>
+      </div>
     </>
   )
 }
