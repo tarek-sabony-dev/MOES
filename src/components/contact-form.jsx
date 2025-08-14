@@ -46,7 +46,7 @@ export default function ContactForm () {
           <textarea className="w-full flex-1 resize-none text-base text-white text-right outline-none bg-transparent border rounded-lg p-3 " placeholder=". . .اسألنا سؤالا" type="text" name="message" id="question" required />
         </div>
         <div className="w-full flex flex-col justify-center items-end gap-2 ">
-          <button className="w-full text-base font-semibold text-white text-center outline-none bg-transparent border rounded-lg p-3 " type="submit" >
+          <button className="w-full text-base font-semibold text-white hover:bg-white hover:text-black transition-colors text-center outline-none bg-transparent border rounded-lg p-3 " type="submit" >
             إرسال
           </button>
         </div>

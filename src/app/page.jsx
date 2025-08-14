@@ -1,9 +1,10 @@
 'use client'
 
 import Background from "@/components/background";
-import { AskusSection, CarouselSection, Section } from "@/components/section";
-import Navbar from "./testing/Navbar";
+import { Navbar } from "@/components/Navbar";
+import { AskusSection, CarouselSection, FooterSection, Section } from "@/components/section";
 import { useRef } from "react";
+import { FaWhatsapp, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function page () {
   const refAbout = useRef(null)
@@ -18,7 +19,13 @@ export default function page () {
     {id: 2, name: "أعمالنا", ref: refWorks },
     {id: 3, name: "اسألنا", ref: refAskus },
     {id: 4, name: "اتصل بنا", ref: refContactus },
-  ];
+  ]
+  const socials = [
+    {id: 0, name:"whatsApp", icon: <FaWhatsapp size={24} />, link: '#'},
+    {id: 1, name:"facebook", icon: <FaFacebook size={24} />, link: '#'},
+    {id: 2, name:"instagram", icon: <FaInstagram size={24} />, link: '#'},
+    {id: 3, name:"linkedin", icon: <FaLinkedin size={24} />, link: '#'},
+  ]
   const aboutUsSection = [
     {id: 0, cardTitle: "من نحن ؟", text: "نخبة من المهندسين المتخصصين نعمل على ابتكار حلول تقنية متقدمة في مجالات التحكم الآلي وكفاءة استخدام الطاقة من خلال حلول ذكية تلبي متطلبات الحياة العصرية. كما نقوم بتصميم وتنفيذ أنظمة المنازل الذكية التي توفر الراحة والأمان.", image: "about-us-image.png"},
   ]
@@ -53,6 +60,7 @@ export default function page () {
           <CarouselSection cards={workFieldsSection} ref={refWorkFields} ></CarouselSection>
           <Section title={"من أعمالنا"} cards={ourWorksSection} ref={refWorks} ></Section>
           <AskusSection image={"askus-image.png"} ref={refAskus}></AskusSection>
+          <FooterSection socials={socials} menuItems={menuItems} ref={refContactus} ></FooterSection>
         </div>
       </div>
     </>

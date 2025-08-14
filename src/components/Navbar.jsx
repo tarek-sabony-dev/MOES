@@ -3,9 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
-import Button from "@/components/button";
+import { Button } from "@/components/button";
 
-export default function Navbar ({ menuItems }) {
+function Navbar ({ menuItems }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const prevScrollY = useRef(0);
@@ -141,5 +141,23 @@ export default function Navbar ({ menuItems }) {
         )}
       </AnimatePresence>
     </motion.header>
-  );
+  )
 }
+
+function PageMap ({ menuItems }) {
+  const scrollToSection = (ref) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      {menuItems.map((item) => (
+        <button key={item.id} onClick={() => scrollToSection(item.ref)} className="w-fit text-base text-white font-light underline underline-offset-4 ">
+          {item.name}
+        </button>
+      ))}
+    </>
+  )
+}
+
+export {Navbar, PageMap}
