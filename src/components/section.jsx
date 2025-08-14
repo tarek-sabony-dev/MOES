@@ -1,5 +1,6 @@
 import Card from "./card"
 import CarouselWithDots from "./cards-carousel"
+import ContactForm from "./contact-form"
 
 function Section ({ title, cards, ref }) {
   return (
@@ -58,9 +59,10 @@ function AskusSection ({image, ref}) {
         <div className="h2">
           اطرح سؤالك
         </div>
-        <div className="w-full h-fit flex flex-col justify-around items-center p-2 lg:p-4 border border-white rounded-3xl lg:rounded-[48px] ">
-          <div className={`w-full h-fit flex justify-around items-center gap-5 p-2 pb-5 lg:p-4 lg:pb-6 border border-white rounded-2xl lg:rounded-[32px] `}>
-            <img className="w-full aspect-square rounded-lg lg:rounded-2xl " src={image} alt="gmail dashbord image" />
+        <div className="w-full h-fit flex flex-col justify-between items-center p-2 lg:p-4 border border-white rounded-3xl lg:rounded-[48px] ">
+          <div className={`w-full flex justify-between items-stretch gap-5 p-2 lg:p-4 border border-white rounded-2xl lg:rounded-[32px] `}>
+            <img className="w-full min-w-[408px] max-w-[600px] aspect-square rounded-lg lg:rounded-2xl hidden lg:block " src={image} alt="gmail dashbord image" />
+            <ContactForm></ContactForm>
           </div>
         </div>
       </div>
