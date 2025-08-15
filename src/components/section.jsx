@@ -40,7 +40,7 @@ function CarouselSection ({cards, ref}) {
                     <div className="w-full h3 text-center ">
                       {card.cardTitle}
                     </div>  
-                    <div className="w-full h-fit text ">
+                    <div className="w-full h-fit text ">  
                       {card.text}
                     </div>
                   </div>

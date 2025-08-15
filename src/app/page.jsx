@@ -23,8 +23,8 @@ export default function page () {
   const socials = [
     {id: 0, name:"whatsApp", icon: <FaWhatsapp size={24} />, link: '#'},
     {id: 1, name:"facebook", icon: <FaFacebook size={24} />, link: '#'},
-    {id: 2, name:"instagram", icon: <FaInstagram size={24} />, link: '#'},
-    {id: 3, name:"linkedin", icon: <FaLinkedin size={24} />, link: '#'},
+    // {id: 2, name:"instagram", icon: <FaInstagram size={24} />, link: '#'},
+    // {id: 3, name:"linkedin", icon: <FaLinkedin size={24} />, link: '#'},
   ]
   const aboutUsSection = [
     {id: 0, cardTitle: "من نحن ؟", text: "نخبة من المهندسين المتخصصين نعمل على ابتكار حلول تقنية متقدمة في مجالات التحكم الآلي وكفاءة استخدام الطاقة من خلال حلول ذكية تلبي متطلبات الحياة العصرية. كما نقوم بتصميم وتنفيذ أنظمة المنازل الذكية التي توفر الراحة والأمان.", image: "about-us-image.png"},

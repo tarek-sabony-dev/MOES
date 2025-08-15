@@ -1,13 +1,17 @@
-'use cleint'
+'use client'
 
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
+import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 
 export default function ContactForm () {
   const form = useRef();
-
+  const [status,  setStatus] = useState('idle') // 'idle' | 'sending' | 'success' | 'error'
+  
   const sendEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    setStatus('sending')
 
     emailjs.sendForm(
       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -16,17 +20,25 @@ export default function ContactForm () {
       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
     )
     .then((result) => {
-        console.log(result.text);
-        alert('Message sent successfully!');
-        form.current.reset();
+        // console.log(result.text);
+        setStatus('success')
+        form.current.reset()
     }, (error) => {
-        console.log(error.text);
-        alert('Failed to send the message, please try again.');
-    });
-  };
+        // console.log(error.text)
+        setStatus('error')
+    })
+  }
+
+  useEffect(() => {
+    if (status === 'success' || status === 'error') {
+      const timer = setTimeout(() => setStatus('idle'), 6000); // Return after 6 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [status])
+
   return (
     <>
-      <form ref={form} onSubmit={sendEmail} className="w-full flex flex-col gap-6 p-2 ">
+      <form ref={form} onSubmit={sendEmail} className="w-full flex relative flex-col gap-6 p-2 ">
         <div className="w-full flex flex-col justify-center items-end gap-2 ">
           <label htmlFor="na  me" className="text-base font-semibold text-white ">
             الاسم
@@ -50,7 +62,53 @@ export default function ContactForm () {
             إرسال
           </button>
         </div>
+        {(status === 'success' || status === 'error') && 
+          <Notification status={status} />
+        }
       </form>
+    </>
+  )
+}
+
+function Notification ({ status }) {
+  return (
+    <>
+      <motion.div
+        initial={{ x: "100vw" }}
+        animate={{ x: 0 }}
+        exit={{ x: "100vw" }}
+        transition={{ 
+          type: "spring", 
+          stiffness: 300, 
+          damping: 30,
+          duration: 0.5 
+        }}
+        className="fixed bottom-6 right-6 lg:bottom-12 lg:right-12 z-50">
+        <Alert className={"w-fit h-fit bg-white "} >
+          <AlertTitle>
+            {status === 'success' ? 
+              <div>
+                تم إرسال الرسالة بنجاح
+              </div>
+              :
+              <div>
+                لم يتم إرسال الرسالة بنجاح
+              </div>
+            }
+          </AlertTitle>
+          <AlertDescription>
+            {status === 'success' ? 
+              <div>
+                الرجاع مراجعة البريد من أجل استلام الرد
+              </div>
+              :
+              <div>
+                الرجاء إعادة المحاولة لاحقا
+              </div>
+            }
+          </AlertDescription>
+        </Alert>
+      </motion.div>
     </>
   )
 }
