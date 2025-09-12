@@ -28,10 +28,10 @@ export default function page () {
     {id: 2,cardTitle: "صيانة و تحديث خطوط الإنتاج", text: "تشخيص الأعطال و إعادة تأهيل الأنظمة القديمة و تطوير خطوط الإنتاج لزيادة الكفاءة و تقليل التوقفات", image: "production-line.png"},
     {id: 3,cardTitle: "التحكم اﻵلي", text: "تصميم و تنفيذ أنظمة التحكم للمعدات الصناعية و خطوط الإنتاج باستخدام تقنيات متقدمة", image: "robotic-controling.png"},
   ]
-  const ourWorksSection = [
-    // {id: 0,cardTitle: "اسم العمل", text: "شرح عن العمل", image: "https://placeholder.pics/svg/400x300"},
-    // {id: 1,cardTitle: "اسم العمل", text: "شرح عن العمل", image: "https://placeholder.pics/svg/400x300"},
-  ]
+  // const ourWorksSection = [
+  //   // {id: 0,cardTitle: "اسم العمل", text: "شرح عن العمل", image: "https://placeholder.pics/svg/400x300"},
+  //   // {id: 1,cardTitle: "اسم العمل", text: "شرح عن العمل", image: "https://placeholder.pics/svg/400x300"},
+  // ]
 
   return (
     <>
@@ -51,7 +51,7 @@ export default function page () {
         <div className="w-full h-fit ">
           <Section title={"حول شركتنا"} cards={aboutUsSection} id="about" ></Section>
           <CarouselSection cards={workFieldsSection} id="workfields" ></CarouselSection>
-          <Section title={"من أعمالنا"} cards={ourWorksSection} id="works" ></Section>
+          {/* <Section title={"من أعمالنا"} cards={ourWorksSection} id="works" ></Section> */}
           <AskusSection image={"askus-image.png"} id="askus"></AskusSection>
           <FooterSection socials={socials} menuItems={menuItems} id="contactus" ></FooterSection>
         </div>
