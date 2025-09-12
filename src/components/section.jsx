@@ -4,10 +4,10 @@ import CarouselWithDots from "./cards-carousel"
 import ContactForm from "./contact-form"
 import { PageMap } from "./Navbar"
 
-function Section ({ title, cards, ref }) {
+function Section ({ title, cards, id }) {
   return (
     <>
-      <div ref={ref} className="w-full h-fit flex flex-col justify-between items-center gap-6 p-6 lg:px-40 lg:py-12 ">
+      <div id={id} className="w-full h-fit flex flex-col justify-between items-center gap-6 p-6 lg:px-40 lg:py-12 ">
         <div className="h2">
           {title}
         </div>
@@ -19,11 +19,11 @@ function Section ({ title, cards, ref }) {
   )
 }
 
-function CarouselSection ({cards, ref}) {
+function CarouselSection ({cards, id}) {
 
   return (
     <>
-      <div ref={ref} className="w-full h-fit flex flex-col justify-center items-center gap-6 p-6 lg:px-40 lg:py-12 ">
+      <div id={id} className="w-full h-fit flex flex-col justify-center items-center gap-6 p-6 lg:px-40 lg:py-12 ">
         <div className="h2">
           مجالات أعمالنا
         </div>
@@ -35,7 +35,7 @@ function CarouselSection ({cards, ref}) {
             <div key={card.id} className="w-[calc(50%-80px)] flex flex-col justify-start items-start p-2 lg:p-4 border border-white rounded-3xl lg:rounded-[48px] ">
               <div className={`w-full h-full flex flex-col justify-start items-start gap-5 p-2 pb-5 lg:p-4 lg:pb-6 border border-white rounded-2xl lg:rounded-[32px] `}>
                 <div className="w-full h-fit flex flex-col gap-5 ">
-                  <img className="w-full rounded-lg lg:rounded-2xl " src={card.image} alt="" />
+                  <img className="w-full rounded-lg lg:rounded-2xl" src={card.image} alt="" />
                   <div className="w-full h-fit flex flex-col justify-center items-center lg:items-end gap-2 px-2 lg:px-6 ">
                     <div className="w-full h3 text-center ">
                       {card.cardTitle}
@@ -54,10 +54,10 @@ function CarouselSection ({cards, ref}) {
   )
 }
 
-function AskusSection ({image, ref}) {
+function AskusSection ({image, id}) {
   return (
     <>
-      <div ref={ref} className="w-full h-fit flex flex-col justify-around items-center gap-6 p-6 lg:px-40 lg:py-12 ">
+      <div id={id} className="w-full h-fit flex flex-col justify-around items-center gap-6 p-6 lg:px-40 lg:py-12 ">
         <div className="h2">
           اطرح سؤالك
         </div>
@@ -72,10 +72,10 @@ function AskusSection ({image, ref}) {
   )
 }
 
-function FooterSection ({ menuItems, socials, ref }) {
+function FooterSection ({ menuItems, socials, id }) {
   return (
     <>
-      <div ref={ref} className="w-full h-fit flex flex-col lg:flex-row-reverse justify-between items-start gap-16 px-6 py-16 lg:px-40 lg:py-16 ">
+      <div id={id} className="w-full h-fit flex flex-col lg:flex-row-reverse justify-between items-start gap-16 px-6 py-16 lg:px-40 lg:py-16 ">
         <div className="w-full h-fit flex flex-col justify-center items-center lg:items-end gap-6 ">
           <div className="w-fit h-fit flex flex-col justify-center items-center gap-4 ">
             <svg width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">

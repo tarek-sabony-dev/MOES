@@ -50,9 +50,6 @@ function Navbar ({ menuItems }) {
     };
   }, [isVisible, isOpen]);
 
-  const scrollToSection = (ref) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <motion.header
@@ -74,8 +71,10 @@ function Navbar ({ menuItems }) {
           <ul className="flex flex-row-reverse gap-6 ">
             {menuItems.map((item) => (
               <li key={item.id} className="flex gap-4 items-center">
-                <Button action={() => scrollToSection(item.ref)}>
-                  {item.name}
+                <Button>
+                  <a href={item.href}>
+                    {item.name}
+                  </a>
                 </Button>
               </li>
             ))}
@@ -127,13 +126,13 @@ function Navbar ({ menuItems }) {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 > 
-                  <Button
-                    className={""}
-                    // action={() => setIsOpen(false)}
-                    action={() => scrollToSection(item.ref)}
+                  <a
+                    href={item.href}
+                    className=""
+                    onClick={() => setIsOpen(false)}
                   >
                     {item.name}
-                  </Button>
+                  </a>
                 </motion.li>
               ))}
             </motion.ul>
@@ -145,16 +144,12 @@ function Navbar ({ menuItems }) {
 }
 
 function PageMap ({ menuItems }) {
-  const scrollToSection = (ref) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <>
       {menuItems.map((item) => (
-        <button key={item.id} onClick={() => scrollToSection(item.ref)} className="w-fit text-base text-white font-light underline underline-offset-4 ">
+        <a key={item.id} href={item.href} className="w-fit text-base text-white font-light underline underline-offset-4 ">
           {item.name}
-        </button>
+        </a>
       ))}
     </>
   )

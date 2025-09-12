@@ -3,31 +3,24 @@
 import Background from "@/components/background";
 import { Navbar } from "@/components/Navbar";
 import { AskusSection, CarouselSection, FooterSection, Section } from "@/components/section";
-import { useRef } from "react";
 import { FaWhatsapp, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function page () {
-  const refAbout = useRef(null)
-  const refWorkFields = useRef(null)
-  const refWorks = useRef(null)
-  const refAskus = useRef(null)
-  const refContactus = useRef(null)
-
   const menuItems = [
-    {id: 0, name: "حول الشركة", ref: refAbout },
-    {id: 1, name: "مجالات عملنا", ref: refWorkFields },
-    {id: 2, name: "أعمالنا", ref: refWorks },
-    {id: 3, name: "اسألنا", ref: refAskus },
-    {id: 4, name: "اتصل بنا", ref: refContactus },
+    {id: 0, name: "حول الشركة", href: "#about" },
+    {id: 1, name: "مجالات عملنا", href: "#workfields" },
+    {id: 2, name: "أعمالنا", href: "#works" },
+    {id: 3, name: "اسألنا", href: "#askus" },
+    {id: 4, name: "اتصل بنا", href: "#contactus" },
   ]
   const socials = [
-    {id: 0, name:"whatsApp", icon: <FaWhatsapp size={24} />, link: '#'},
-    {id: 1, name:"facebook", icon: <FaFacebook size={24} />, link: '#'},
+    {id: 0, name:"whatsApp", icon: <FaWhatsapp size={24} />, link: 'https://wa.me/+963994327898'},
+    {id: 1, name:"facebook", icon: <FaFacebook size={24} />, link: 'https://www.facebook.com/share/17CektRmKn/'},
     // {id: 2, name:"instagram", icon: <FaInstagram size={24} />, link: '#'},
     // {id: 3, name:"linkedin", icon: <FaLinkedin size={24} />, link: '#'},
   ]
   const aboutUsSection = [
-    {id: 0, cardTitle: "من نحن ؟", text: "نخبة من المهندسين المتخصصين نعمل على ابتكار حلول تقنية متقدمة في مجالات التحكم الآلي وكفاءة استخدام الطاقة من خلال حلول ذكية تلبي متطلبات الحياة العصرية. كما نقوم بتصميم وتنفيذ أنظمة المنازل الذكية التي توفر الراحة والأمان.", image: "about-us-image.png"},
+    {id: 0, cardTitle: "من نحن ؟", text: "نخبة من المهندسين المتخصصين نعمل على ابتكار حلول تقنية متقدمة في مجالات التحكم الآلي وكفاءة استخدام الطاقة من خلال حلول ذكية تلبي متطلبات الحياة العصرية. كما نقوم بتصميم وتنفيذ أنظمة المنازل الذكية التي توفر الراحة والأمان.", image: "about-us-image-3.png"},
   ]
   const workFieldsSection = [
     {id: 0,cardTitle: "برمجة المتحكمات الصغرية", text: "تطوير حلول مدمجة تعتمد على متحكمات دقيقة للتحكم في العمليات و الأجهزة الذكية", image: "microcontroler.png"},
@@ -36,8 +29,8 @@ export default function page () {
     {id: 3,cardTitle: "التحكم اﻵلي", text: "تصميم و تنفيذ أنظمة التحكم للمعدات الصناعية و خطوط الإنتاج باستخدام تقنيات متقدمة", image: "robotic-controling.png"},
   ]
   const ourWorksSection = [
-    {id: 0,cardTitle: "اسم العمل", text: "شرح عن العمل", image: "https://placeholder.pics/svg/400x300"},
-    {id: 1,cardTitle: "اسم العمل", text: "شرح عن العمل", image: "https://placeholder.pics/svg/400x300"},
+    // {id: 0,cardTitle: "اسم العمل", text: "شرح عن العمل", image: "https://placeholder.pics/svg/400x300"},
+    // {id: 1,cardTitle: "اسم العمل", text: "شرح عن العمل", image: "https://placeholder.pics/svg/400x300"},
   ]
 
   return (
@@ -56,11 +49,11 @@ export default function page () {
           </div>
         </div>
         <div className="w-full h-fit ">
-          <Section title={"حول شركتنا"} cards={aboutUsSection} ref={refAbout} ></Section>
-          <CarouselSection cards={workFieldsSection} ref={refWorkFields} ></CarouselSection>
-          <Section title={"من أعمالنا"} cards={ourWorksSection} ref={refWorks} ></Section>
-          <AskusSection image={"askus-image.png"} ref={refAskus}></AskusSection>
-          <FooterSection socials={socials} menuItems={menuItems} ref={refContactus} ></FooterSection>
+          <Section title={"حول شركتنا"} cards={aboutUsSection} id="about" ></Section>
+          <CarouselSection cards={workFieldsSection} id="workfields" ></CarouselSection>
+          <Section title={"من أعمالنا"} cards={ourWorksSection} id="works" ></Section>
+          <AskusSection image={"askus-image.png"} id="askus"></AskusSection>
+          <FooterSection socials={socials} menuItems={menuItems} id="contactus" ></FooterSection>
         </div>
       </div>
     </>
