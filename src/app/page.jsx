@@ -3,9 +3,11 @@
 import Background from "@/components/background";
 import { Navbar } from "@/components/Navbar";
 import { AskusSection, CarouselSection, FooterSection, Section } from "@/components/section";
+import { redirect } from "next/navigation";
 import { FaWhatsapp, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function page () {
+  redirect('https://e-commerce-dashboard-roan.vercel.app/')
   const menuItems = [
     {id: 0, name: "حول الشركة", href: "#about" },
     {id: 1, name: "مجالات عملنا", href: "#workfields" },
